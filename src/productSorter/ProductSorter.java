@@ -2,7 +2,7 @@ package productSorter;
 import java.util.Arrays;
 
 /**
- * 	Test pour VSCT
+ *  Test pour VSCT
  *  @see <a href="https://github.com/voyages-sncf-technologies/xspeedit" target="_top">Enoncé du test</a>
  *  @author Cannelle Rb
  *  
@@ -38,7 +38,7 @@ public class ProductSorter {
 	  }
 	  
 	  /**
-	   *  Parcourt la liste (sous forme de String) des produits et renvoie un tableau t de taille 9, où t[i]
+	   * Parcourt la liste (sous forme de String) des produits et renvoie un tableau t de taille 9, où t[i]
 	   * représente le nombre d'occurrences de (i+1) dans tab 
 	   *
 	   * @param s	la chaîne de caractères à convertir en tableau
@@ -60,10 +60,10 @@ public class ProductSorter {
 		  int boxContent = 0;
 		  int i = products.length-1;
 
-		  // s'il reste des produits à ranger et que la boîte en cours n'est pas pleine
+		  // tant qu'il reste des produits à ranger et que la boîte en cours n'est pas pleine
 		  while (i >= 0 && boxContent != boxSize) {
-			  /* si le produit (i+1) rentre dans la boîte, on l'y ajoute et on le retire
-			  du tableau products */
+			  /* tant qu'il reste des produits (i+1) et que (i+1) rentre dans la boîte, on 
+			  l'y ajoute et on le retire du tableau products */
 			  while (products[i] > 0 && i+1 <= boxSize - boxContent) {
 				  result.append(Integer.toString(i+1));
 				  boxContent += i+1;
