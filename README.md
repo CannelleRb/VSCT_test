@@ -5,7 +5,10 @@ Ce test est à l'attention de Voyages-SNCF Technologies. Pour voir les résultat
 
 ## Notes
 ### Améliorations apportées
-* L'élément déterminant pour améliorer le temps de calcul est l'utilisation de StringBuilder ; on observe que le temps de calcul est divisé par 100 environ entre l'utilisation de String et de concaténations classiques et l'utilisation de StringBuilder
+* L'élément déterminant pour améliorer le temps de calcul est l'utilisation de StringBuilder :
+  * le temps de calcul est divisé par 100 environ entre l'utilisation de String avec concaténations classiques et l'utilisation de StringBuilder dans la méthode de tri
+  * le temps de calcul est réduit d'environ 10 minutes pour la création de l'exemple de 1000000 produits dans la méthode `main`
+
 * Une méthode de pré-tri (`complementarySort()`) a été ajoutée au tri de base (`auxSort()`), le gain de temps qu'elle offre est négligeable pour un petit nombre de produits mais augmente au fur et à mesure (de l'ordre de 0.001 seconde pour 10000 produits et 0.003 seconde pour 100000)
 
 ### Améliorations futures possibles
