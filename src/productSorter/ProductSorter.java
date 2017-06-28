@@ -28,6 +28,7 @@ public class ProductSorter {
 		  this.boxSize = boxSize;
 		  remainingProducts = stringToSort.length();
 
+		  this.complementarySort();
 		  while (remainingProducts != 0) {
 			  this.auxSort();
 		  }
@@ -51,6 +52,38 @@ public class ProductSorter {
 			  t[Integer.parseInt(s.substring(i, i+1))-1] += 1;
 		  }
 		  return t;
+	  }
+	
+	  /**
+	  * Opère un premier tri et met ensemble tous les complémentaires immédiats : 9 et 1, 8 et 2, etc.
+	  */
+	  public void complementarySort() {
+	  	int pSize = products.length;
+		for (int i = 0; i <= pSize/2; i++) {
+			/* vérifie si l'on est au milieu de la liste des produits ou pas (auquel cas on ajoute deux
+			fois le même chiffre (5) et pas deux chiffres différents, ce qui change un peu la donne) */
+			boolean middle = (i == pSize-i-1);
+				
+			/* le nombre de produits de chacun des deux complémentaires que l'on va ajouter en une seule 
+			fois dans des caisses */
+			int toBox;
+				
+			if (middle) {
+				toBox = products[i]/2;
+				products[i] -= toBox;
+			}
+			else {
+				toBox = Math.min(products[i], products[pSize-i-1]);
+				products[pSize-i-1] -= toBox;
+			}
+				
+			products[i] -= toBox;
+			remainingProducts -= 2*toBox;
+
+			for (int j = 0; j < toBox; j++){
+				result.append(Integer.toString(i+1) + Integer.toString(pSize-i) + "/");
+			}
+		}
 	  }
 	  
 	  /**
