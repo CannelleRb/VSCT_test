@@ -23,7 +23,7 @@ public class ProductSorter {
 	   * @param stringToSort	listant les produits à trier
 	   * @param boxSize			la taille des boîtes dans lesquelles on range les produits
 	   */
-	  public ProductSorter(String stringToSort, int boxSize) {
+	  public ProductSorter(StringBuilder stringToSort, int boxSize) {
 		  products = sortTab(stringToSort);
 		  this.boxSize = boxSize;
 		  remainingProducts = stringToSort.length();
@@ -45,7 +45,7 @@ public class ProductSorter {
 	   * @param s	la chaîne de caractères à convertir en tableau
 	   * @return	le tableau représentant les occurrences des produits
 	  */
-	  public static int[] sortTab(String s) {
+	  public static int[] sortTab(StringBuilder s) {
 		  int[] t = new int[9];
 		  Arrays.fill(t, 0);
 		  for (int i = 0; i<s.length(); i++) {
