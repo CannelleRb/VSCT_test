@@ -1,15 +1,15 @@
-package productSorter;
+package main.java;
 import java.util.Arrays;
 
 /**
- *  Test pour VSCT
+ *  Tri des produits dans des caisses
  *  @see <a href="https://github.com/voyages-sncf-technologies/xspeedit" target="_top">Enoncé du test</a>
  *  @author Cannelle Rb
  *  
- *  @param products	représentant le nombre d'occurrences de (i+1) dans la liste des produits à trier
- *  @param result	contenant le résultat du tri des produits
- *  @param boxSize	la taille des boîtes dans lesquelles on range les produits
- *  @param remainingProducts le nombre de produits restant à trier
+ *  @param products	            représentant le nombre d'occurrences de (i+1) dans la liste des produits à trier
+ *  @param result	            contenant le résultat du tri des produits
+ *  @param boxSize	            la taille des boîtes dans lesquelles on range les produits
+ *  @param remainingProducts    le nombre de produits restant à trier
  */
 public class ProductSorter {
 	  private int[] products = new int[9];
@@ -87,7 +87,7 @@ public class ProductSorter {
 	  }
 	  
 	  /**
-	   *  Crée les caisses de taille boxSize à partir du tableau products et les écrit dans result
+	   * Crée les caisses de taille boxSize à partir du tableau products et les écrit dans result
 	  */
 	  public void auxSort() {
 		  int boxContent = 0;
